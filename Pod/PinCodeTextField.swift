@@ -24,7 +24,7 @@ import UIKit
         }
     }
     @IBInspectable public var underlineHeight: CGFloat = 3
-    @IBInspectable public var placeholderText: String?
+    @IBInspectable public var placeholderTextField: String?
     @IBInspectable public var text: String? {
         didSet {
             updateView()
@@ -196,7 +196,7 @@ import UIKit
     }
     
     private func updateLabels() {
-        let textHelper = TextHelper(text: text, placeholder: placeholderText, isSecure: isSecureTextEntry)
+        let textHelper = TextHelper(text: text, placeholder: placeholderTextField, isSecure: isSecureTextEntry)
         for label in labels {
             let index = labels.firstIndex(of: label) ?? 0
             let currentCharacter = textHelper.character(atIndex: index)
